@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Video</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Amazon Ember', Arial, sans-serif; }
+        .scroll-container { 
+            display: flex; 
+            overflow-x: auto; 
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+        }
+        .scroll-container::-webkit-scrollbar { display: none; }
+        .video-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .video-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="bg-gray-950 px-6 py-4 flex items-center justify-between sticky top-0 z-50">
+        <div class="flex items-center gap-8">
+            <div class="text-2xl font-bold text-blue-400">prime video</div>
+            <div class="hidden md:flex gap-6">
+                <a href="#" class="hover:text-blue-400 transition">Home</a>
+                <a href="#" class="hover:text-blue-400 transition">Store</a>
+                <a href="#" class="hover:text-blue-400 transition">Channels</a>
+                <a href="#" class="hover:text-blue-400 transition">Categories</a>
+                <a href="#" class="hover:text-blue-400 transition">My Stuff</a>
+            </div>
+        </div>
+        <div class="flex items-center gap-4">
+            <input type="search" placeholder="Search" class="hidden md:block bg-gray-800 px-4 py-2 rounded-md outline-none focus:ring-2 focus:ring-blue-400">
+            <button class="text-2xl">👤</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative h-screen">
+        <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=1920" alt="Hero" class="w-full h-full object-cover">
+        <div class="absolute inset-0 hero-gradient flex items-end">
+            <div class="p-12 max-w-2xl">
+                <h1 class="text-5xl font-bold mb-4">The Grand Adventure</h1>
+                <p class="text-lg mb-6 text-gray-300">An epic journey across uncharted territories where heroes rise and legends are born. Join the adventure of a lifetime.</p>
+                <div class="flex gap-4">
+                    <button class="bg-white text-black px-8 py-3 rounded-md font-semibold hover:bg-gray-200 transition flex items-center gap-2">
+                        ▶️ Play
+                    </button>
+                    <button class="bg-gray-700 px-8 py-3 rounded-md font-semibold hover:bg-gray-600 transition">
+                        + Watchlist
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Sections -->
+    <div class="px-6 py-8 space-y-12">
+        <!-- Continue Watching -->
+        <section>
+            <h2 class="text-2xl font-bold mb-4">Continue Watching</h2>
+            <div class="scroll-container gap-4 pb-4">
+                <div class="video-card min-w-80 flex-shrink-0 cursor-pointer">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1574267432644-f610c64ce762?w=400" alt="Show" class="w-full h-48 object-cover rounded-lg">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gray-700">
+                            <div class="h-full bg-blue-500" style="width: 45%"></div>
+                        </div>
+                    </div>
+                    <h3 class="mt-2 font-semibold">Night Chronicles</h3>
+                    <p class="text-sm text-gray-400">S2 E5 • 28 min left</p>
+                </div>
+                <div class="video-card min-w-80 flex-shrink-0 cursor-pointer">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400" alt="Show" class="w-full h-48 object-cover rounded-lg">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gray-700">
+                            <div class="h-full bg-blue-500" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <h3 class="mt-2 font-semibold">Cosmic Journey</h3>
+                    <p class="text-sm text-gray-400">S1 E3 • 15 min left</p>
+                </div>
+                <div class="video-card min-w-80 flex-shrink-0 cursor-pointer">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=400" alt="Show" class="w-full h-48 object-cover rounded-lg">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gray-700">
+                            <div class="h-full bg-blue-500" style="width: 20%"></div>
+                        </div>
+                    </div>
+                    <h3 class="mt-2 font-semibold">Desert Wanderer</h3>
+                    <p class="text-sm text-gray-400">Movie • 1h 45min left</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trending Now -->
+        <section>
+            <h2 class="text-2xl font-bold mb-4">Trending Now</h2>
+            <div class="scroll-container gap-4 pb-4">
+                <div class="video-card min-w-60 flex-shrink-0 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=300" alt="Movie" class="w-full h-80 object-cover rounded-lg">
+                    <h3 class="mt-2 font-semibold">Ocean's Mystery</h3>
+                </div>
+                <div class="video-card min-w-60 flex-shrink-0 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=300" alt="Movie" class="w-full h-80 object-cover rounded-lg">
+                    <h3 class="mt-2 font-semibold">Tech Revolution</h3>
+                </div>
+                <div class="video-card min-w-60 flex-shrink-0 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300" alt="Movie" class="w-full h-80 object-cover rounded-lg">
+                    <h3 class="mt-2 font-semibold">Mountain Peak</h3>
+                </div>
+                <div class="video-card min-w-60 flex-shrink-0 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=300" alt="Movie" class="w-full h-80 object-cover rounded-lg">
+                    <h3 class="mt-2 font-semibold">Starlight Dreams</h3>
+                </div>
+                <div class="video-card min-w-60 flex-shrink-0 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=300" alt="Movie" class="w-full h-80 object-cover rounded-lg">
+                    <h3 class="mt-2 font-semibold">Tropical Paradise</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Amazon Originals -->
+        <section>
+            <h2 class="text-2xl font-bold mb-4">Amazon Originals</h2>
+            <div class="scroll-container gap-4 pb-4">
+                <div class="video-card min-w-60 flex-shrink-0 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300" alt="Movie" class="w-full h-80 object-cover rounded-lg">
+                    <h3 class="mt-2 font-semibold">City Lights</h3>
+                </div>
+                <div class="video-card min-w-60 flex-shrink-0 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=300" alt="Movie" class="w-full h-80 object-cover rounded-lg">
+                    <h3 class="mt-2 font-semibold">Future World</h3>
+                </div>
+                <div class="video-card min-w-60 flex-shrink-0 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=300" alt="Movie" class="w-full h-80 object-cover rounded-lg">
+                    <h3 class="mt-2 font-semibold">Wild Nature</h3>
+                </div>
+                <div class="video-card min-w-60 flex-shrink-0 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=300" alt="Movie" class="w-full h-80 object-cover rounded-lg">
+                    <h3 class="mt-2 font-semibold">Mountain Quest</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action & Adventure -->
+        <section>
+            <h2 class="text-2xl font-bold mb-4">Action & Adventure</h2>
+            <div class="scroll-container gap-4 pb-4">
+                <div class="video-card min-w-60 flex-shrink-0 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=300" alt="Movie" class="w-full h-80 object-cover rounded-lg">
+                    <h3 class="mt-2 font-semibold">Canyon Rider</h3>
+                </div>
+                <div class="video-card min-w-60 flex-shrink-0 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=300" alt="Movie" class="w-full h-80 object-cover rounded-lg">
+                    <h3 class="mt-2 font-semibold">Storm Chaser</h3>
+                </div>
+                <div class="video-card min-w-60 flex-shrink-0 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=300" alt="Movie" class="w-full h-80 object-cover rounded-lg">
+                    <h3 class="mt-2 font-semibold">Forest Warriors</h3>
+                </div>
+                <div class="video-card min-w-60 flex-shrink-0 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=300" alt="Movie" class="w-full h-80 object-cover rounded-lg">
+                    <h3 class="mt-2 font-semibold">Highland Battle</h3>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 px-6 py-12 mt-12">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-2xl font-bold text-blue-400 mb-6">prime video</div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="font-semibold mb-3">Prime Video</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white">All Videos</a></li>
+                        <li><a href="#" class="hover:text-white">Your Watchlist</a></li>
+                        <li><a href="#" class="hover:text-white">Prime Benefits</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-3">Support</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white">Feedback</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-3">Account</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white">Your Account</a></li>
+                        <li><a href="#" class="hover:text-white">Settings</a></li>
+                        <li><a href="#" class="hover:text-white">Sign Out</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-3">Legal</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white">Terms of Use</a></li>
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center text-sm text-gray-500 border-t border-gray-800 pt-6">
+                © 2024 Prime Video Clone. For educational purposes only.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
